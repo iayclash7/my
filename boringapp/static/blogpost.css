@@ -1,0 +1,31 @@
+
+  .postpage{
+
+    width:50%;
+    margin: 20px auto;
+    margin-top: 50px;
+    /* border: 1px solid rgb(177, 24, 24); */
+
+    
+}
+
+.postpage h1{
+
+  text-align: center;
+}
+
+.postpage p{
+
+    padding:30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:22px;
+    margin: 20px;
+  }
+
+  @media (max-width:600px){
+
+  .postpage{
+    width: 90%;
+  }
+    
+  }

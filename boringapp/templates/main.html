@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- --------Content----------- -->
+
+    <div class="main-content">
+
+        {% for a in my_dict reversed %}
+        
+        <div class="posts">
+          <a href="{% url 'blogpost' a.id %}">
+          <h1>{{a.heading}}</h1>
+          <p>{{ a.paragraph|truncatechars:40 }}</p>
+          <!-- <p>{{a.id}}</p> -->
+        </a>
+          <button>Download</button>
+          <button>Preview</button>
+        </a>
+        </div>
+
+        {%endfor%}
+
+      
+
+        
+      </div>
+
+
+
+
+{% endblock %}
