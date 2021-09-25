@@ -17,10 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from main_app import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.homepage,name='homepage'),
-    path('blogpost/<int:article_id>/',views.blogpost,name='blogpost')
-]
-urlpatterns += staticfiles_urlpatterns()
+if settings.DEBUG==True:
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('',views.homepage,name='homepage'),
+        path('blogpost/<int:article_id>/',views.blogpost,name='blogpost')
+    ]
+    urlpatterns += staticfiles_urlpatterns()
+else:
+    urlpatterns = [
+        path('',views.homepage,name='homepage'),
+        path('blogpost/<int:article_id>/',views.blogpost,name='blogpost')
+    ]
+    urlpatterns += staticfiles_urlpatterns()
